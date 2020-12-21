@@ -1,0 +1,22 @@
+#----Server------------------------------------------------------------------------------------------------------------#
+server:
+  port: 14701
+#----Spring------------------------------------------------------------------------------------------------------------#
+spring:
+  #----Data Source-----------------------------------------------------------------------------------------------------#
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/company?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&autoReconnect=true
+    username: boodoou
+    password: boodoou
+#----Mybatis-----------------------------------------------------------------------------------------------------------#
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.boodoou.mb.entity
+#----logger------------------------------------------------------------------------------------------------------------#
+logging:
+  level:
+    com:
+      example:
+        mapper: INFO
