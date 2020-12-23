@@ -1,0 +1,52 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.1'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'org.asciidoctor.convert' version '1.5.8'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+ext {
+    set('snippetsDir', file("build/generated-snippets"))
+}
+
+dependencies {
+
+    //添加子模块
+    compile project(":b-common")
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    compile group: 'org.liquibase', name: 'liquibase-core', version: '2.0.0'
+
+    // mysql
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
+    // HdrHistogram
+    compile group: 'org.hdrhistogram', name: 'HdrHistogram', version: '2.1.12'
+    // alibaba druid
+    compile group: 'com.alibaba', name: 'druid', version: '1.2.4'
+
+    // mybatis-plus
+    compile group: 'com.baomidou', name: 'mybatis-plus', version: '3.4.0'
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+}
+
+test {
+    outputs.dir snippetsDir
+    useJUnitPlatform()
+}
+
+asciidoctor {
+    inputs.dir snippetsDir
+    dependsOn test
+}
