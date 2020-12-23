@@ -1,4 +1,4 @@
-package com.boodoou.demo.constant;
+package com.boodoou.common.constant;
 
 /**
  * 日期（时间）格式化 Pattern

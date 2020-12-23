@@ -1,4 +1,4 @@
-package com.boodoou.demo.utils;
+package com.boodoou.common.utils;
 
 /**
  * 字符串工具
