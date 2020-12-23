@@ -7,7 +7,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/company?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&autoReconnect=true
+    url: jdbc:mysql://127.0.0.1:3306/b_company?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&autoReconnect=true
     username: boodoou
     password: boodoou
 #----Mybatis-----------------------------------------------------------------------------------------------------------#
