@@ -1,0 +1,23 @@
+#----服务器------------------------------------------------------------------------------------------------------------#
+server:
+  port: 14703
+#========== Redis 服务器 ======================================#
+redis:
+  common:
+    address: redis://127.0.0.1:6379
+    database: 10
+    password: boodoou
+    connectionPoolSize: 100
+    subscriptionConnectionPoolSize: 100
+    connectionMinimumIdleSize: 5
+    timeout: 30000
+    connectTimeout: 30000
+  stream:
+    address: redis://127.0.0.1:6379
+    database: 11
+    password: boodoou
+    connectionPoolSize: 100
+    subscriptionConnectionPoolSize: 100
+    connectionMinimumIdleSize: 5
+    timeout: 30000
+    connectTimeout: 30000

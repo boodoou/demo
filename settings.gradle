@@ -1,5 +1,6 @@
 rootProject.name = 'demo'
-include 'b-mybatis'
 include 'b-common'
+include 'b-mybatis'
 include 'b-mybatis-plus'
+include 'b-redis'
 
