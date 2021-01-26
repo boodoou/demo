@@ -1,0 +1,18 @@
+#========== 服务器 ======================================#
+server:
+  port: 14704
+
+spring:
+  kafka:
+    bootstrap-servers: kafka.tfn.ink:50920,kafka.tfn.ink:50921,kafka.tfn.ink:50922
+    consumer:
+      group-id: alpha-test
+      auto-offset-reset: latest
+      auto-commit-interval: 100
+      enable-auto-commit: true
+      max-poll-records: 10
+    listener:
+      concurrency: 8
+
+biz:
+  consumer: true
